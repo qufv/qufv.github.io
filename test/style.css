@@ -1,0 +1,133 @@
+/* Основные стили бокового меню */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+  color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+/* Логотип или заголовок меню */
+.sidebar-header {
+  text-align: center;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* Стили для пунктов меню */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.sidebar-menu li {
+  position: relative;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-menu li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-left: 3px solid #4ecca3;
+}
+
+.sidebar-menu li a.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-left: 3px solid #4ecca3;
+}
+
+/* Иконки меню (можно использовать Font Awesome) */
+.sidebar-menu li a i {
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+/* Подменю (если нужно) */
+.sidebar-submenu {
+  display: none;
+  list-style: none;
+  padding-left: 40px;
+  margin: 0;
+}
+
+.sidebar-menu li.active .sidebar-submenu {
+  display: block;
+}
+
+.sidebar-submenu li a {
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+/* Анимация при наведении */
+.sidebar-menu li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transition: width 0.3s;
+}
+
+.sidebar-menu li a:hover::before {
+  width: 100%;
+}
+
+/* Для мобильных устройств можно добавить кнопку скрытия/показа */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 1001;
+  background: #4ecca3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+}
