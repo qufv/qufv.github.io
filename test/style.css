@@ -1,4 +1,12 @@
-/* Основные стили бокового меню */
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Стили бокового меню (остаются как в предыдущем примере) */
 .sidebar {
     position: fixed;
     left: 0;
@@ -14,7 +22,6 @@
     overflow-y: auto;
 }
 
-/* Логотип или заголовок меню */
 .sidebar-header {
     text-align: center;
     padding: 0 20px 20px;
@@ -27,7 +34,6 @@
     font-size: 1.5em;
 }
 
-/* Стили для пунктов меню */
 .sidebar-menu {
     list-style: none;
     padding: 0;
@@ -63,43 +69,9 @@
     border-left: 3px solid #4ecca3;
 }
 
-/* Иконки меню */
 .sidebar-menu li a i {
     margin-right: 15px;
     font-size: 18px;
-}
-
-/* Подменю */
-.sidebar-submenu {
-    display: none;
-    list-style: none;
-    padding-left: 40px;
-    margin: 0;
-}
-
-.sidebar-menu li.active .sidebar-submenu {
-    display: block;
-}
-
-.sidebar-submenu li a {
-    padding: 8px 20px;
-    font-size: 14px;
-}
-
-/* Анимация при наведении */
-.sidebar-menu li a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background: rgba(255, 255, 255, 0.1);
-    transition: width 0.3s;
-}
-
-.sidebar-menu li a:hover::before {
-    width: 100%;
 }
 
 /* Основное содержимое */
@@ -109,20 +81,67 @@
     transition: margin-left 0.3s;
 }
 
-/* Для мобильных устройств */
-.menu-toggle {
-    display: none;
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 1001;
-    background: #4ecca3;
+.content-box {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+/* Кнопки */
+.rules-button, .back-button {
+    display: inline-block;
+    background-color: #4ecca3;
     color: white;
-    border: none;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.rules-button:hover, .back-button:hover {
+    background-color: #3aa789;
+}
+
+.rules-button i, .back-button i {
+    margin-right: 8px;
+}
+
+/* Стили для страницы правил */
+.rules-list {
+    margin-top: 20px;
+}
+
+.rule-item {
+    margin-bottom: 25px;
+}
+
+.rule-item h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-rule-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.rule-item ul {
+    padding-left: 20px;
+}
+
+.rule-item li {
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 /* Адаптивность */
@@ -144,28 +163,17 @@
     }
 }
 
-/* Дополнительные стили для демонстрации */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
-
-.content-box {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
-    color: #2c3e50;
-    margin-top: 0;
-}
-
-p {
-    line-height: 1.6;
-    color: #555;
+.menu-toggle {
+    display: none;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1001;
+    background: #4ecca3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
