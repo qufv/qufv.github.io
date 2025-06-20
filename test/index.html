@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
+    <title>Сайт с боковым меню</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,23 +14,43 @@
             <h3>Меню сайта</h3>
         </div>
         <ul class="sidebar-menu">
-            <li class="active"><a href="#" data-page="home"><i class="fas fa-home"></i> Главная</a></li>
-            <li><a href="#" data-page="rules"><i class="fas fa-book"></i> Правила</a></li>
+            <li class="active"><a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a href="#" onclick="showPage('rules')"><i class="fas fa-book"></i> Правила</a></li>
         </ul>
     </div>
 
-    <!-- Кнопка меню для мобилок -->
-    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <!-- Кнопка для мобилок -->
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
 
     <!-- Основной контент -->
     <div class="main-content">
-        <div class="content-box" id="home-content">
-            <h1>Добро пожаловать!</h1>
-            <p>Выберите раздел в меню слева.</p>
+        <div id="home-page" class="page">
+            <div class="content-box">
+                <h1>Добро пожаловать!</h1>
+                <p>Используйте меню слева для навигации.</p>
+            </div>
         </div>
-        
-        <!-- Фрагмент правил будет загружен сюда -->
-        <div id="rules-container"></div>
+
+        <div id="rules-page" class="page" style="display: none;">
+            <!-- Сюда встроен фрагмент правил -->
+            <div class="content-box">
+                <h1><i class="fas fa-book"></i> Правила</h1>
+                <div class="rules-section">
+                    <h2><i class="fas fa-ban"></i> Запрещено:</h2>
+                    <ul>
+                        <li>Оскорблять других</li>
+                        <li>Распространять спам</li>
+                    </ul>
+                </div>
+                <div class="rules-section">
+                    <h2><i class="fas fa-check-circle"></i> Разрешено:</h2>
+                    <ul>
+                        <li>Вежливо общаться</li>
+                        <li>Задавать вопросы</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
