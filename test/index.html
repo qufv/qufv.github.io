@@ -8,50 +8,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Боковое меню -->
     <div class="sidebar">
         <div class="sidebar-header">
             <h3>Меню сайта</h3>
         </div>
         <ul class="sidebar-menu">
-            <li class="active"><a href="#home"><i class="fas fa-home"></i> Главная</a></li>
-            <li><a href="#rules"><i class="fas fa-book"></i> Правила</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a href="rules.html"><i class="fas fa-book"></i> Правила</a></li>
         </ul>
     </div>
 
+    <!-- Кнопка для мобилок -->
     <button class="menu-toggle">
         <i class="fas fa-bars"></i>
     </button>
 
+    <!-- Основной контент -->
     <div class="main-content">
-        <!-- Контент будет меняться здесь -->
-        <div id="home-content" class="content-box">
-            <h1>Добро пожаловать!</h1>
-            <p>Это главная страница нашего сайта.</p>
-        </div>
-
-        <div id="rules-content" class="content-box" style="display:none;">
-            <h1>Правила сайта</h1>
-            <div class="rules-list">
-                <div class="rule-item">
-                    <h2><i class="fas fa-ban"></i> Запрещено</h2>
-                    <ul>
-                        <li>Оскорбление других пользователей</li>
-                        <li>Размещение незаконного контента</li>
-                        <li>Спам и флуд</li>
-                    </ul>
-                </div>
-                <div class="rule-item">
-                    <h2><i class="fas fa-check-circle"></i> Рекомендуется</h2>
-                    <ul>
-                        <li>Быть вежливым</li>
-                        <li>Следить за актуальностью информации</li>
-                        <li>Соблюдать тематику</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="content-box">
+            <h1>Главная страница</h1>
+            <p>Добро пожаловать! Переходите в раздел "Правила" через меню слева.</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Только мобильное меню
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
