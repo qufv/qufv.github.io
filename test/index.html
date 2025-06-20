@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
+    <title>Мой сайт</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,30 +12,43 @@
         <div class="sidebar-header">
             <h3>Меню сайта</h3>
         </div>
-        <ul class="sidebar-menu" id="menu">
-            <li class="active">
-                <a href="#" data-content="home">
-                    <i class="fas fa-home"></i>
-                    <span>Главная</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-content="rules">
-                    <i class="fas fa-book"></i>
-                    <span>Правила</span>
-                </a>
-            </li>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="#home"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a href="#rules"><i class="fas fa-book"></i> Правила</a></li>
         </ul>
     </div>
 
-    <button class="menu-toggle" id="menuToggle">
+    <button class="menu-toggle">
         <i class="fas fa-bars"></i>
     </button>
 
-    <div class="main-content" id="contentContainer">
-        <div class="content-box">
+    <div class="main-content">
+        <!-- Контент будет меняться здесь -->
+        <div id="home-content" class="content-box">
             <h1>Добро пожаловать!</h1>
             <p>Это главная страница нашего сайта.</p>
+        </div>
+
+        <div id="rules-content" class="content-box" style="display:none;">
+            <h1>Правила сайта</h1>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <h2><i class="fas fa-ban"></i> Запрещено</h2>
+                    <ul>
+                        <li>Оскорбление других пользователей</li>
+                        <li>Размещение незаконного контента</li>
+                        <li>Спам и флуд</li>
+                    </ul>
+                </div>
+                <div class="rule-item">
+                    <h2><i class="fas fa-check-circle"></i> Рекомендуется</h2>
+                    <ul>
+                        <li>Быть вежливым</li>
+                        <li>Следить за актуальностью информации</li>
+                        <li>Соблюдать тематику</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
