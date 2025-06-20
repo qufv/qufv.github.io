@@ -12,59 +12,33 @@
         <div class="sidebar-header">
             <h3>Меню сайта</h3>
         </div>
-        
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" id="menu">
             <li class="active">
-                <a href="index.html">
+                <a href="#" data-content="home">
                     <i class="fas fa-home"></i>
                     <span>Главная</span>
                 </a>
             </li>
             <li>
-                <a href="rules.html">
+                <a href="#" data-content="rules">
                     <i class="fas fa-book"></i>
                     <span>Правила</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-info-circle"></i>
-                    <span>О нас</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-envelope"></i>
-                    <span>Контакты</span>
                 </a>
             </li>
         </ul>
     </div>
 
-    <button class="menu-toggle">
+    <button class="menu-toggle" id="menuToggle">
         <i class="fas fa-bars"></i>
     </button>
 
-    <div class="main-content">
+    <div class="main-content" id="contentContainer">
         <div class="content-box">
             <h1>Добро пожаловать!</h1>
-            <p>Это главная страница нашего сайта. Здесь вы можете найти основную информацию.</p>
-            
-            <a href="rules.html" class="rules-button">
-                <i class="fas fa-arrow-right"></i> Перейти к правилам
-            </a>
+            <p>Это главная страница нашего сайта.</p>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-            
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
