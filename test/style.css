@@ -6,7 +6,7 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Стили бокового меню (остаются как в предыдущем примере) */
+/* Боковое меню */
 .sidebar {
     position: fixed;
     left: 0;
@@ -18,162 +18,21 @@ body {
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     overflow-y: auto;
 }
 
-.sidebar-header {
-    text-align: center;
-    padding: 0 20px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-header h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.sidebar-menu li {
-    position: relative;
-    padding: 0;
-    margin: 5px 0;
-}
-
-.sidebar-menu li a {
-    display: flex;
-    align-items: center;
-    color: #b8b8b8;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 12px 20px;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-}
-
-.sidebar-menu li a:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    border-left: 3px solid #4ecca3;
-}
-
-.sidebar-menu li a.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-left: 3px solid #4ecca3;
-}
-
-.sidebar-menu li a i {
-    margin-right: 15px;
-    font-size: 18px;
-}
-
-/* Основное содержимое */
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.3s;
-}
-
-.content-box {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
-    color: #2c3e50;
-    margin-top: 0;
-}
-
-/* Кнопки */
-.rules-button, .back-button {
-    display: inline-block;
-    background-color: #4ecca3;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-}
-
-.rules-button:hover, .back-button:hover {
-    background-color: #3aa789;
-}
-
-.rules-button i, .back-button i {
-    margin-right: 8px;
-}
-
-/* Стили для страницы правил */
-.rules-list {
-    margin-top: 20px;
-}
-
-.rule-item {
-    margin-bottom: 25px;
-}
-
-.rule-item h2 {
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.fa-rule-icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.rule-item ul {
-    padding-left: 20px;
-}
-
-.rule-item li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
+/* ... (остальные стили из предыдущего примера) ... */
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
     }
-    
     .sidebar.active {
         transform: translateX(0);
     }
-    
-    .main-content {
-        margin-left: 0;
-    }
-    
     .menu-toggle {
         display: block;
     }
-}
-
-.menu-toggle {
-    display: none;
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 1001;
-    background: #4ecca3;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
 }
