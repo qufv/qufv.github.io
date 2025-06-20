@@ -1,89 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Правила сайта</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h3>Меню сайта</h3>
+<div class="content-box">
+    <h1>Правила сайта</h1>
+    <div class="rules-list">
+        <div class="rule-item">
+            <h2><i class="fas fa-ban"></i> Запрещено</h2>
+            <ul>
+                <li>Оскорбление других пользователей</li>
+                <li>Размещение незаконного контента</li>
+                <li>Спам и флуд</li>
+            </ul>
         </div>
-        
-        <ul class="sidebar-menu">
-            <li>
-                <a href="index.html">
-                    <i class="fas fa-home"></i>
-                    <span>Главная</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="rules.html">
-                    <i class="fas fa-book"></i>
-                    <span>Правила</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-info-circle"></i>
-                    <span>О нас</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-envelope"></i>
-                    <span>Контакты</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <button class="menu-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="main-content">
-        <div class="content-box">
-            <h1>Правила сайта</h1>
-            
-            <div class="rules-list">
-                <div class="rule-item">
-                    <h2><i class="fas fa-rule-icon fas fa-ban"></i> Запрещено</h2>
-                    <ul>
-                        <li>Оскорбление других пользователей</li>
-                        <li>Размещение незаконного контента</li>
-                        <li>Спам и флуд</li>
-                    </ul>
-                </div>
-                
-                <div class="rule-item">
-                    <h2><i class="fas fa-rule-icon fas fa-check-circle"></i> Рекомендуется</h2>
-                    <ul>
-                        <li>Быть вежливым с другими участниками</li>
-                        <li>Следить за актуальностью информации</li>
-                        <li>Соблюдать тематику разделов</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i> Вернуться на главную
-            </a>
+        <div class="rule-item">
+            <h2><i class="fas fa-check-circle"></i> Рекомендуется</h2>
+            <ul>
+                <li>Быть вежливым</li>
+                <li>Следить за актуальностью информации</li>
+                <li>Соблюдать тематику</li>
+            </ul>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-            
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-        });
-    </script>
-</body>
-</html>
+</div>
