@@ -57,12 +57,12 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Стили для правил */
-.rule-section {
+/* Стили для разделов */
+.rule-section, .info-section {
     margin-top: 20px;
 }
 
-.rule-section h2 {
+.rule-section h2, .info-section h2 {
     color: #2c3e50;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
