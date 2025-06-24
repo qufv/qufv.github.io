@@ -74,6 +74,9 @@ a:visited {
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
+.rule-section li {
+    list-style: none;
+}
 
 /* Адаптация для мобилок */
 @media (max-width: 768px) {
