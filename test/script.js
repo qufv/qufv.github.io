@@ -47,9 +47,19 @@ function loadPage(page) {
                 `;
             });
     }
-}
-
-// Для мобильного меню (опционально)
-function toggleMenu() {
-    document.querySelector('.sidebar').classList.toggle('active');
+    else if (page === 'contacts') {
+        fetch('contacts.html')
+            .then(response => response.text())
+            .then(html => {
+                container.innerHTML = html;
+            })
+            .catch(error => {
+                container.innerHTML = `
+                    <div class="content-box">
+                        <h1>Ошибка</h1>
+                        <p>Не удалось загрузить ссылки.</p>
+                    </div>
+                `;
+            });
+    }
 }
