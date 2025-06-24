@@ -9,6 +9,9 @@ body {
 a {
     text-decoration: none;
 }
+a:visited {
+    color: gray;
+}
 
 /* Боковое меню */
 .sidebar {
