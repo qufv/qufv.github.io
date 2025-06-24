@@ -13,7 +13,7 @@ function loadPage(page) {
         container.innerHTML = `
             <div id="home-content" class="content-box">
                 <h1>Добро пожаловать!</h1>
-                <p>Выберите раздел в меню слева.</p>
+                <p>Используйте меню для навигации по сайту.</p>
             </div>
         `;
     } 
@@ -32,9 +32,24 @@ function loadPage(page) {
                 `;
             });
     }
+    else if (page === 'info') {
+        fetch('info.html')
+            .then(response => response.text())
+            .then(html => {
+                container.innerHTML = html;
+            })
+            .catch(error => {
+                container.innerHTML = `
+                    <div class="content-box">
+                        <h1>Ошибка</h1>
+                        <p>Не удалось загрузить информацию.</p>
+                    </div>
+                `;
+            });
+    }
 }
 
-// Для мобильного меню (если нужно)
+// Для мобильного меню (опционально)
 function toggleMenu() {
     document.querySelector('.sidebar').classList.toggle('active');
 }
