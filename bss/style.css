@@ -51,6 +51,20 @@ a:visited {
     background: #3498db;
 }
 
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 101;
+}
+
 /* Основной контент */
 .main-content {
     margin-left: 250px;
