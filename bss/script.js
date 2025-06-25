@@ -1,4 +1,4 @@
-function loadPage(page, event) {
+function loadPage(page) {
     const container = document.getElementById('content-container');
     
     // Убираем активный класс у всех пунктов меню
@@ -7,9 +7,7 @@ function loadPage(page, event) {
     });
     
     // Добавляем активный класс текущему пункту
-    if (event && event.target) {
-        event.target.parentElement.classList.add('active');
-    }
+    event.target.parentElement.classList.add('active');
     
     if (page === 'home') {
         container.innerHTML = `
@@ -65,20 +63,15 @@ function loadPage(page, event) {
             });
     }
 }
-
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('active');
 });
 
 document.querySelectorAll('.sidebar-menu a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault(); // Добавляем preventDefault
-        const page = this.getAttribute('data-page'); // Убедитесь, что у ссылок есть data-page
-        loadPage(page, event); // Передаем event в функцию
-        
-        // Закрываем меню только на мобильных
-        if (window.innerWidth <= 768) {
-            document.querySelector('.sidebar').classList.remove('active');
-        }
-    });
+  link.addEventListener('click', function() {
+    // Закрываем меню только на мобильных
+    if (window.innerWidth <= 768) {
+      document.querySelector('.sidebar').classList.remove('active');
+    }
+  });
 });
