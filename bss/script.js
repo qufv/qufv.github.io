@@ -1,3 +1,12 @@
+let homeHTML;
+document.addEventListener('DOMContentLoaded', () => {
+    const template = document.getElementById('content-container');
+    homeHTML = `'${template.innerHTML}'`;
+    template.remove(); // Удаляем шаблон после извлечения
+});
+
+
+
 function loadPage(page) {
     const container = document.getElementById('content-container');
     
