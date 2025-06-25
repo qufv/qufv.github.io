@@ -1,9 +1,7 @@
 let homeHTML;
 document.addEventListener('DOMContentLoaded', () => {
     const template = document.getElementById('content-container');
-    homeHTML = `'${template.innerHTML}'`;
-    template.remove(); // Удаляем шаблон после извлечения
-});
+    homeHTML = `'${template.innerHTML}'`;});
 
 
 
