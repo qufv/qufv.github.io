@@ -50,19 +50,27 @@ a:visited {
 .sidebar-menu li.active a {
     background: #3498db;
 }
-
+/* все снизу тестовый мусор */
 .menu-toggle {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 101;
+  position: absolute;
+  left: 100%; /* Кнопка справа от сайдбара */
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Анимация движения */
+  z-index: 101;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar.active .menu-toggle {
+  transform: translateX(0); /* Кнопка остается приклеенной к правому краю */
 }
 
 /* Основной контент */
