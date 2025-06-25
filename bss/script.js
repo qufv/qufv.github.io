@@ -1,4 +1,4 @@
-function loadPage(page) {
+function loadPage(page, event) {
     const container = document.getElementById('content-container');
     
     // Убираем активный класс у всех пунктов меню
@@ -7,22 +7,17 @@ function loadPage(page) {
     });
     
     // Добавляем активный класс текущему пункту
-    event.target.parentElement.classList.add('active');
+    if (event && event.target) {
+        event.target.parentElement.classList.add('active');
+    }
     
     if (page === 'home') {
-        fetch('index.html')
-            .then(response => response.text())
-            .then(html => {
-                container.innerHTML = html;
-            })
-            .catch(error => {
-                container.innerHTML = `
-                    <div class="content-box">
-                        <h1>Ошибка</h1>
-                        <p>Не удалось загрузить главную.</p>
-                    </div>
-                `;
-            });
+        container.innerHTML = `
+            <div id="home-content" class="content-box">
+                <h1>Добро пожаловать!</h1>
+                <p>Используйте меню для навигации по сайту.</p>
+            </div>
+        `;
     }
     else if (page === 'rules') {
         fetch('rules.html')
@@ -70,15 +65,20 @@ function loadPage(page) {
             });
     }
 }
+
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('active');
 });
 
 document.querySelectorAll('.sidebar-menu a').forEach(link => {
-  link.addEventListener('click', function() {
-    // Закрываем меню только на мобильных
-    if (window.innerWidth <= 768) {
-      document.querySelector('.sidebar').classList.remove('active');
-    }
-  });
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Добавляем preventDefault
+        const page = this.getAttribute('data-page'); // Убедитесь, что у ссылок есть data-page
+        loadPage(page, event); // Передаем event в функцию
+        
+        // Закрываем меню только на мобильных
+        if (window.innerWidth <= 768) {
+            document.querySelector('.sidebar').classList.remove('active');
+        }
+    });
 });
