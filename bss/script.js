@@ -66,3 +66,12 @@ function loadPage(page) {
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('active');
 });
+
+document.querySelectorAll('.sidebar-menu a').forEach(link => {
+  link.addEventListener('click', function() {
+    // Закрываем меню только на мобильных
+    if (window.innerWidth <= 768) {
+      document.querySelector('.sidebar').classList.remove('active');
+    }
+  });
+});
