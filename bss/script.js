@@ -19,12 +19,7 @@ function loadPage(page) {
     event.target.parentElement.classList.add('active');
     
     if (page === 'home') {
-        container.innerHTML = `
-            <div id="home-content" class="content-box">
-                <h1>Добро пожаловать!</h1>
-                <p>Используйте меню для навигации по сайту.</p>
-            </div>
-        `;
+        container.innerHTML = homeHTML;
     }
     else if (page === 'rules') {
         fetch('rules.html')
