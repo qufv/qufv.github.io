@@ -1,7 +1,7 @@
 let homeHTML;
 document.addEventListener('DOMContentLoaded', () => {
     const template = document.getElementById('content-container');
-    homeHTML = `'${template.innerHTML}'`;});
+    homeHTML = template.innerHTML});
 
 
 
@@ -17,7 +17,7 @@ function loadPage(page) {
     event.target.parentElement.classList.add('active');
     
     if (page === 'home') {
-        container.innerHTML = eval(homeHTML);
+        container.innerHTML = homeHTML;
     }
     else if (page === 'rules') {
         fetch('rules.html')
