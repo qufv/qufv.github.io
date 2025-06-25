@@ -97,7 +97,6 @@ a:visited {
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
-        transition: 0.3s;
     }
     
     .sidebar.active {
@@ -106,5 +105,9 @@ a:visited {
     
     .main-content {
         margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
     }
 }
