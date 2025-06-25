@@ -19,7 +19,7 @@ function loadPage(page) {
                 container.innerHTML = `
                     <div class="content-box">
                         <h1>Ошибка</h1>
-                        <p>Не удалось загрузить правила.</p>
+                        <p>Не удалось загрузить главную.</p>
                     </div>
                 `;
             });
