@@ -17,7 +17,7 @@ function loadPage(page) {
     event.target.parentElement.classList.add('active');
     
     if (page === 'home') {
-        container.innerHTML = homeHTML;
+        container.innerHTML = eval(homeHTML);
     }
     else if (page === 'rules') {
         fetch('rules.html')
