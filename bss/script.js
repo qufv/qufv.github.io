@@ -10,13 +10,20 @@ function loadPage(page) {
     event.target.parentElement.classList.add('active');
     
     if (page === 'home') {
-        container.innerHTML = `
-            <div id="home-content" class="content-box">
-                <h1>Добро пожаловать!</h1>
-                <p>Используйте меню для навигации по сайту.</p>
-            </div>
-        `;
-    } 
+        fetch('index.html')
+            .then(response => response.text())
+            .then(html => {
+                container.innerHTML = html;
+            })
+            .catch(error => {
+                container.innerHTML = `
+                    <div class="content-box">
+                        <h1>Ошибка</h1>
+                        <p>Не удалось загрузить правила.</p>
+                    </div>
+                `;
+            });
+    }
     else if (page === 'rules') {
         fetch('rules.html')
             .then(response => response.text())
