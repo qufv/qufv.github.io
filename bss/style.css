@@ -142,18 +142,28 @@ body.dark-mode .content-box {
 
 /* Кнопка темы */
 #themeToggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
+    display: block;
     position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%; /* Кнопка справа от сайдбара */
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Анимация движения */
+    z-index: 101;
 }
 
 /* Иконки (луна/солнце) */
-#themeToggle .fa-sun { display: none; }
-body.dark-mode #themeToggle .fa-moon { display: none; }
-body.dark-mode #themeToggle .fa-sun { display: inline; }
+#themeToggle .fa-sun { 
+    display: none; 
+}
+body.dark-mode #themeToggle .fa-moon { 
+    display: none;
+}
+body.dark-mode #themeToggle .fa-sun { 
+    display: block;
+}
