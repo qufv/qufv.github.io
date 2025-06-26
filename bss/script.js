@@ -77,3 +77,19 @@ document.querySelectorAll('.sidebar-menu a').forEach(link => {
     }
   });
 });
+
+// Тёмная тема
+const themeToggle = document.getElementById('themeToggle');
+let currentTheme = localStorage.getItem('theme') || 'light'; // let вместо const
+
+// Применяем сохранённую тему
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+
+// Переключение темы
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+});
