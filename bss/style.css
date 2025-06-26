@@ -150,7 +150,7 @@ body.dark-mode .content-box {
     height: 40px;
     background: none;
     color: white;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease; /* Анимация движения */
