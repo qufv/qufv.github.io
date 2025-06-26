@@ -120,3 +120,40 @@ a {
         display: block;
     }
 }
+
+/* Тёмная тема */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .sidebar {
+    background: #1e2b38;
+}
+
+body.dark-mode .sidebar-menu li.active a {
+    background: #2980b9;
+}
+
+body.dark-mode .content-box {
+    background: #252525;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Кнопка темы */
+#themeToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Иконки (луна/солнце) */
+#themeToggle .fa-sun { display: none; }
+body.dark-mode #themeToggle .fa-moon { display: none; }
+body.dark-mode #themeToggle .fa-sun { display: inline; }
