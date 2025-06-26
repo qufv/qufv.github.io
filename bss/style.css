@@ -139,6 +139,9 @@ body.dark-mode .content-box {
     background: #252525;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+body.dark-mode h1, body.dark-mode h2 {
+    color: #e0e0e0;
+}
 
 /* Кнопка темы */
 #themeToggle {
